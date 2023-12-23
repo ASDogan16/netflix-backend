@@ -34,3 +34,8 @@ def login_view(request):
         return render(request, 'login.html', {
         'form': form,
         })
+
+
+def register_view(request):
+
+    return render(request, 'register.html', {})
