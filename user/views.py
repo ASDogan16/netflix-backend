@@ -83,8 +83,29 @@ def profile_add_view(request):
             profile.user = request.user
             profile.save()
             return redirect('profile_page')
+        else:
+            return render(request, 'profile_add.html', {
+        'form': form
+    })
+
 
     form = UserProfileForm()
     return render(request, 'profile_add.html', {
         'form': form
     })
+
+
+def profile_edit_view(request, profile_slug):
+
+    profile = Profile.objects.get(slug= profile_slug)
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=profile)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('profile_page')
+
+    return render(request, 'profile_edit.html', {})
+

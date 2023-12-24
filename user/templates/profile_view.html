@@ -14,9 +14,12 @@
                         <img style="width:180px; height:150px;" src="{{profile.image.url}}" alt="">
                     <p class="fs-3">{{profile.name}}</p>
                     </a>
+                    <div>
+                        <a href="{% url "profile_edit_page" profile.slug %}" class="btn btn-warning w-100">Düzenle</a>
+                    </div>
                 </div>
             {% endfor %}
-
+                
             <div class="ekle">
                 <a href="{% url "profile_add_page" %}" class="text-white text-decoration-none">
                     <div class="circle d-flex justify-content-center align-items-center" style="width: 180px; height: 150px">
