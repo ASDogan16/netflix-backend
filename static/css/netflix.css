@@ -18,3 +18,18 @@
     height: 10px;
     background-color: #3a3a3a;
 }
+
+.ekle a:hover .circle{
+    background-color: white;
+    border-radius: 10px;
+    color: #3a3a3a;
+}
+
+.profiller .profil a img {
+    border: 1px outset #3a3a3a;
+    border-radius: 10px;
+}
+
+.profiller .profil a:hover{
+    border-color: white;
+}
